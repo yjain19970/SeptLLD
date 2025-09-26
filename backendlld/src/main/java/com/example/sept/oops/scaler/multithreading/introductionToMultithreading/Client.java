@@ -1,4 +1,4 @@
-package com.example.sept.oops.scaler.introductionToMultithreading;
+package com.example.sept.oops.scaler.multithreading.introductionToMultithreading;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

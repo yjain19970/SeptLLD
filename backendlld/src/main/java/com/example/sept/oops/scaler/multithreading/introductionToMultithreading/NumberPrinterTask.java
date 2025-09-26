@@ -1,4 +1,4 @@
-package com.example.sept.oops.scaler.introductionToMultithreading;
+package com.example.sept.oops.scaler.multithreading.introductionToMultithreading;
 
 public class NumberPrinterTask implements Runnable {
 
