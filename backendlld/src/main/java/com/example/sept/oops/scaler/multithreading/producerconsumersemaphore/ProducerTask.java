@@ -32,7 +32,7 @@ public class ProducerTask implements Runnable {
         while(true){
             //S1. taking lock....
             try {
-                producerSemaphore.acquire(); // DECREASE THE COUNT OF PROD.
+                producerSemaphore.acquire(); // DECREASE THE COUNT OF PROD. 5--->4
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -44,7 +44,7 @@ public class ProducerTask implements Runnable {
             }
 
             //S3.
-            consumerSemaphore.release(); // INCREASE THE COUNT FOR CONSUMER.
+            consumerSemaphore.release(); // 
         }
     }
 }

@@ -23,9 +23,8 @@ public class ConsumerTask implements Runnable {
     public void run() {
         while(true){
             //S1.
-            System.out.println("Outside critical section....");
             try {
-                consumerSemaphore.acquire();
+                consumerSemaphore.acquire(); // DECREASING THE VALUE
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -37,8 +36,8 @@ public class ConsumerTask implements Runnable {
             }
 
             //S3. release
-            producerSemaphore.release(); // INCREAMENT THE COUNT ON PRODUCER. -- 5?? 
-            System.out.println("Outside critical section....");
+            producerSemaphore.release(); //  INCREASING THE VALUE
+            System.out.println("Outside critical");
         }
     } 
 }

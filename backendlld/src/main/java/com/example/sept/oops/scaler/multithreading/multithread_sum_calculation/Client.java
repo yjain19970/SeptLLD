@@ -11,38 +11,52 @@ import java.util.concurrent.Future;
 
 public class Client {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
-        int dataSize = 1000;
+        
+        int size = 100;
         int availableCores = Runtime.getRuntime().availableProcessors();
-        System.out.println("Available Cores: " + availableCores);
+        System.out.println("Available core: " + availableCores);
 
-        // Generate random numbers
-        List<Integer> numbers = new ArrayList<>();
         Random random = new Random();
-        for (int i = 0; i < dataSize; i++) {
-            numbers.add(random.nextInt(10000));
+        List<Integer> numbers = new ArrayList<>();
+        for(int i=0;i<size;i++){
+            numbers.add(random.nextInt(1000)); // 
         }
+        int chunkSize = size / availableCores; // 1000/12 = 
+        ExecutorService executorService = Executors.newFixedThreadPool(availableCores); // 4 threads.
 
-        // Executor with N threads
-        ExecutorService executor = Executors.newFixedThreadPool(availableCores);
-
-        // Prepare tasks
         List<Future<Long>> futures = new ArrayList<>();
-        int chunkSize = dataSize / availableCores; // Dividing datasize to process in each availableCore. 
-
-        for (int i = 0; i < availableCores; i++) {
-            int start = i * chunkSize;
-            int end = (i == availableCores - 1) ? dataSize : (i + 1) * chunkSize;
+        for(int i=0;i<availableCores;i++){
+            int start = i*chunkSize; // i=0 start =0
+            int end = (i == availableCores-1) ? size : (i+1)*chunkSize; // end = 
 
             Callable<Long> task = new SumMultiThreadCallable(numbers, start, end);
-            futures.add(executor.submit(task));
+            // Task creation.
+            Future<Long> sum = executorService.submit(task); 
+            futures.add(sum);
         }
 
-        // Collect results
-        long totalSum = 0;
-        for (Future<Long> f : futures) {
-            totalSum += f.get(); // waits for each thread to finish and adds its sum
+        // ITERATE OVER MY FUTURES AND GET THE SUM.
+        long sum=0;
+        for(int i=0;i<futures.size();i++){
+            sum += futures.get(i).get();
         }
-        executor.shutdown();
-        System.out.println("Total sum = " + totalSum);
+
+        executorService.shutdown();
+        System.out.println("Sum is: " + sum);
     }
 }
+
+/**
+ * 
+ * Problem Statement
+    Implement a BankAccount class with a balance.
+    Create multiple threads representing depositors and withdrawers.
+    Simulate a race condition where multiple users deposit and withdraw simultaneously.
+    Fix the issue using:
+        synchronized methods
+        synchronized blocks
+    Measure execution time with and without synchronization.
+ * 
+ * 
+ * 
+ */
