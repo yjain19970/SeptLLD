@@ -22,10 +22,6 @@ InventoryManagementSystem.
 
 -> Comparable in the Items class which sorts the list on basis of Price.
 
- > 7 Mins
-
-
-
 
 ### Milestone-2
 Implement a generic Inventory system for managing items.
@@ -37,7 +33,6 @@ Implement a generic Inventory system for managing items.
         - Add(T)
         - Remove(id)
         - List<T> GetAll()
-
 
 
 ### Milestone-3
@@ -52,12 +47,6 @@ Implement a list of Items for keeping recently viewed Items.
         - AddRecentlyViewedItems() 
             - If SIZE > MAX_SIZE, then remove last from item. 
             - Add any items to front of the QUEUE.
-            
-
-
-
-
-
 
 
 ### Milestone-4
@@ -69,8 +58,32 @@ Implement OrderProcessing by giving Priority to some orders
 
 ### Milestone-5
 Enable sorting and filtering of items on different criteria.
+    - sort the orders by
+        - price
+        - Quantity. (you will add this to order class.)
+
+
+    - TWO COMPARATORS NOW:
+        - SortOrderByPriceComparator
+        - SortOrderByQuantityComparator.
+    
+
+    - In your INventoryManagementClass:
+        - Filtering logic
+            - Filter Items by Price.
+            - Filter Items by availability (again you will add this.)
+                - If quantyt>0 --> Then Item is available.
+
+
+
+
     - Write custom comparators here.
     - Add Filtering capabilities.
+
+
+
+
+
 
 
 ### Difference between Comparable and Comparator:
