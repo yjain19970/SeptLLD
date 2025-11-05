@@ -15,7 +15,7 @@ public class Client {
             for(int i=0;i<5;i++){
                Student studentClone =  StudentRegistry
                     .getStudentTemplate("Student_Nov_2025").clone();
-               
+                  // Student studentClone = ogStudent.clone();
                studentClone.setAge(10);
                studentClone.setName("Input fromName");
                
