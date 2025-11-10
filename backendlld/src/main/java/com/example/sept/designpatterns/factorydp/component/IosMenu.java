@@ -1,4 +1,4 @@
-package com.example.sept.factorydp.component;
+package com.example.sept.designpatterns.factorydp.component;
 
 public class IosMenu implements Menu {
 

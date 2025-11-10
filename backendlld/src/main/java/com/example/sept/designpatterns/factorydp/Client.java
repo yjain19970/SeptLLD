@@ -1,6 +1,6 @@
-package com.example.sept.factorydp;
+package com.example.sept.designpatterns.factorydp;
 
-import com.example.sept.factorydp.component.Button;
+import com.example.sept.designpatterns.factorydp.component.Button;
 
 public class Client {
     public static void main(String[] args) throws Exception {

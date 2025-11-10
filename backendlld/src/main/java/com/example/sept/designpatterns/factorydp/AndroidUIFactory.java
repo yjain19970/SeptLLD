@@ -1,9 +1,9 @@
-package com.example.sept.factorydp;
+package com.example.sept.designpatterns.factorydp;
 
-import com.example.sept.factorydp.component.AndroidButton;
-import com.example.sept.factorydp.component.AndroidMenu;
-import com.example.sept.factorydp.component.Button;
-import com.example.sept.factorydp.component.Menu;
+import com.example.sept.designpatterns.factorydp.component.AndroidButton;
+import com.example.sept.designpatterns.factorydp.component.AndroidMenu;
+import com.example.sept.designpatterns.factorydp.component.Button;
+import com.example.sept.designpatterns.factorydp.component.Menu;
 
 public class AndroidUIFactory implements UIFactory {
 

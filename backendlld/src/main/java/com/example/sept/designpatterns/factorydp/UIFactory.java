@@ -1,7 +1,7 @@
-package com.example.sept.factorydp;
+package com.example.sept.designpatterns.factorydp;
 
-import com.example.sept.factorydp.component.Button;
-import com.example.sept.factorydp.component.Menu;
+import com.example.sept.designpatterns.factorydp.component.Button;
+import com.example.sept.designpatterns.factorydp.component.Menu;
 
 /**
  * This is AbstractFactory

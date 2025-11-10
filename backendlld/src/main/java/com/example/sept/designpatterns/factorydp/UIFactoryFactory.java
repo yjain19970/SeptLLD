@@ -1,4 +1,4 @@
-package com.example.sept.factorydp;
+package com.example.sept.designpatterns.factorydp;
 
 /**
  * This should be the only class

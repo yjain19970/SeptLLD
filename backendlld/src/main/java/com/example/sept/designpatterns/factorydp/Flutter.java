@@ -1,4 +1,4 @@
-package com.example.sept.factorydp;
+package com.example.sept.designpatterns.factorydp;
 
 public class Flutter {
     public void setTheme(){
