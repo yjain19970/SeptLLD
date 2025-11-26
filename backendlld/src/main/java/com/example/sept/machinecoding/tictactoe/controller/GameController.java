@@ -41,7 +41,11 @@ public class GameController {
     }
 
     public void displayBoard(Game game){
-        game.getBoard();
+        game.printBoard();
+    }
+
+    public Player getWinner(Game game){
+        return game.getWinner();
     }
 
 }

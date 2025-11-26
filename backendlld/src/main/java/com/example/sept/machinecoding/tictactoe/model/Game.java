@@ -86,9 +86,20 @@ public class Game {
         this.winningStrategies = winningStrategies;
     }
 
+
     public void makeMove() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'makeMove'");
+        /**
+         * Steps:
+         * 
+         * 1. Get the player using nextPlayerIndex
+         * 2. Take Input from the player using Scaner
+         * 3. Validate and Update the Cell
+         * 4. Store the move in List<Move>
+         * 5. Increament the nextPlayerIndex
+         * 6. Check for winner. If this player has Won the game, then mark this playuer as wiiner.
+         * 
+         * 
+         */
     }
 
     public void undo() {
