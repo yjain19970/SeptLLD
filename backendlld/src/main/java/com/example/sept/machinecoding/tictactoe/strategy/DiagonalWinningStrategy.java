@@ -8,7 +8,12 @@ public class DiagonalWinningStrategy implements WinningStrategy {
     @Override
     public boolean checkWinner(Board board, Move move) {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'checkWinner'");
+        //throw new UnsupportedOperationException("Unimplemented method 'checkWinner'");
+        return false;
+    }
+
+    @Override
+    public void handleUndo(Board board, Move move) {
     }
     
 }

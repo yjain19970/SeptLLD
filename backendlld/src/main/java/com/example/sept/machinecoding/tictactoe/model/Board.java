@@ -18,6 +18,15 @@ public class Board {
         }
        }
     }
+
+    public void printBoard(){
+        for(List<Cell> cellRow : board){
+            for(Cell cell: cellRow){
+                cell.display();
+            }
+            System.out.print("\n");
+        }
+    }
     
     public int getSize() {
         return size;
@@ -31,4 +40,5 @@ public class Board {
     public void setBoard(List<List<Cell>> board) {
         this.board = board;
     }
+    
 }

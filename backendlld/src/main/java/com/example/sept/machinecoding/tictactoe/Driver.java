@@ -17,6 +17,7 @@ import com.example.sept.machinecoding.tictactoe.model.PlayerType;
 public class Driver {
     public static void main(String[] args) {
         // This class will Interact with my GameController.
+        Scanner scanner = new Scanner(System.in); // DISCUSS THIS LAYER.
         try{
             int dimension = 3; // HARD CODE IT FOR NOW.
             List<Player> players = new ArrayList<>();
@@ -26,21 +27,33 @@ public class Driver {
 
             GameController gameController = new GameController();
             Game game =  gameController.startGame(dimension, players);
-            //Scanner scanner = new Scanner(System.in); // DISCUSS THIS LAYER.
             while(gameController.checkGameState(game).equals(GameState.IN_PROGRESS)){
                 gameController.displayBoard(game);
+
+                System.out.println("Do you want to do UNDO? (y/n) ");
+                String undoInput = scanner.next();
+
+                if(undoInput.equals("y")){
+                    gameController.undo(game);
+                    continue;
+                }
+
                 System.out.println("Please make a move....");
                 gameController.makeMove(game);
             }
 
             System.out.println("Game is FINISHED. ");
             if(gameController.checkGameState(game).equals(GameState.WIN)){
-                System.out.println("Game is WON by Player:  " + gameController.getWinner(game));
+                System.out.println("Game is WON by Player:  " + gameController.getWinner(game).getName() );
             }else{
                 System.out.println("Game has been DRAWN.");
             }
+            System.out.println("Final condition of the board ----> ");
+            gameController.displayBoard(game);
         }catch(Exception e){
-            System.out.println("Exception happened: " + e.getStackTrace());
+            System.out.println("Exception happened: " + e);
+        } finally{
+            scanner.close();
         }
     }
 }
