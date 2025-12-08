@@ -4,6 +4,11 @@ import java.util.Date;
 import java.util.List;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,14 +16,17 @@ import lombok.Setter;
 @Setter
 @Entity
 public class Booking extends BaseModel {
-    private BookingStatus bookingStatus;
-    // 
-    private List<ShowSeat> showSeats;
-    private User user;
-    private Date bookingCreatedAt;
-    //
-    private Show show;
-    private int amount;
-    //
-    private List<Payment> payments;
+    
+    @Enumerated(EnumType.ORDINAL)
+    private BookingStatus bookingStatus; // ENUM
+    @ManyToMany
+    private List<ShowSeat> showSeats; // NP
+    @ManyToOne
+    private User user; // NP
+    private Date bookingCreatedAt; // P
+    @ManyToOne
+    private Show show; // NP
+    private int amount; // P
+    @OneToMany
+    private List<Payment> payments; // NP
 }
