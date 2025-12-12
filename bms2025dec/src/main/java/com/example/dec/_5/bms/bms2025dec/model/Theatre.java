@@ -3,6 +3,7 @@ package com.example.dec._5.bms.bms2025dec.model;
 import java.util.List;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,5 +16,6 @@ public class Theatre extends BaseModel {
     private String address;
     @OneToMany
     private List<Screen> screens;
+    @ManyToOne
     private City city;
 }

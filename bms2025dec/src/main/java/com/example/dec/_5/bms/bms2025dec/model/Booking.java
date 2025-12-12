@@ -14,9 +14,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Entity
+@Entity // This is a little different....
 public class Booking extends BaseModel {
-    
     @Enumerated(EnumType.ORDINAL)
     private BookingStatus bookingStatus; // ENUM
     @ManyToMany

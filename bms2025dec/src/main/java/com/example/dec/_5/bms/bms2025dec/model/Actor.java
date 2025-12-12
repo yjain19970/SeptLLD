@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Entity // SB will understand that it needs to create 
+@Entity(name = "actors") // SB will understand that it needs to create 
 // a table for this class.
 public class Actor extends BaseModel {
     private String name;
